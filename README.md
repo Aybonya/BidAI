@@ -5,7 +5,7 @@ BidAI is an MVP web application for field monitoring, satellite index visualizat
 ## Repository Contents
 
 - `src/`, `server/` - MVP source code (frontend + backend)
-- `pitch-deck/PITCH_DECK.md` - pitch deck (15-slide structure)
+- `pitch-deck/*.pdf` - pitch deck (PDF presentation)
 - `docs/TECHNICAL_DOCUMENTATION.md` - technical documentation
 
 ## Quick Start
