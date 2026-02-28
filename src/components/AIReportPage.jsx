@@ -29,6 +29,15 @@ const getPeriodById = (id) => {
   return 90;
 };
 
+const normalizeAiError = (value) => {
+  const text = String(value || "");
+  if (!text) return "";
+  if (text.includes("OPENAI_API_KEY_MISSING")) {
+    return "API кілті орнатылмаған. Демо-режимдегі жергілікті AI-есеп көрсетілді.";
+  }
+  return text;
+};
+
 const buildEmergencyFieldReport = (request) => {
   const payload = buildRequestPayload(request);
   const idx = payload.indicesTimeseries || [];
@@ -958,7 +967,7 @@ export default function AIReportPage({ request, onClose }) {
           setReport(data.report);
           saveCached(cacheKey, { report: data.report, source: data.source, requestId: data.requestId, ts: Date.now() });
           if (data.error) {
-            setError(data.error);
+            setError(normalizeAiError(data.error));
           } else if (isSeasonCompare && requestBody?.options?.dateAutoAdjusted) {
             setError("Таңдалған күндер бойынша дерек табылмады. Салыстыру бірдей ұзындықтағы соңғы екі қолжетімді аралықпен орындалды.");
           }

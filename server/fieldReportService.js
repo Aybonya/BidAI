@@ -262,7 +262,7 @@ export const generateFieldReport = async ({ field, period, indicesTimeseries, we
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    return { report: fallback, source: "fallback", stats, openai: null };
+    return { report: fallback, source: "fallback", stats, openai: null, error: "OPENAI_API_KEY_MISSING" };
   }
 
   const model = process.env.OPENAI_MODEL || "gpt-4o-mini";

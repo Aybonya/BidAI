@@ -40,7 +40,8 @@ export const generateAssistantReply = async ({ messages = [], context = {} }) =>
     return {
       reply: buildFallback({ userText: lastUser?.content || "", context }),
       source: "fallback",
-      openai: null
+      openai: null,
+      error: "OPENAI_API_KEY_MISSING"
     };
   }
 

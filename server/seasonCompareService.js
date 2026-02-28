@@ -292,7 +292,13 @@ export const generateSeasonCompare = async ({ field, seasonA, seasonB, options =
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    return { report: fallback, source: "fallback", openai: null, stats: { statsA, statsB, deltas } };
+    return {
+      report: fallback,
+      source: "fallback",
+      openai: null,
+      stats: { statsA, statsB, deltas },
+      error: "OPENAI_API_KEY_MISSING"
+    };
   }
 
   const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
