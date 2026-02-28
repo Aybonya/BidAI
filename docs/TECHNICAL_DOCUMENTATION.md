@@ -50,6 +50,32 @@ Frontend/imagery:
 Security note:
 - Do not expose private keys with `VITE_` prefix in production.
 
+## 4.1 Where to Get API Keys
+
+### OpenAI (`OPENAI_API_KEY`)
+1. Open platform: `https://platform.openai.com/`
+2. Login to your account.
+3. Go to API Keys page: `https://platform.openai.com/api-keys`
+4. Create a new secret key and copy it once.
+5. Put it into `.env`:
+   - `OPENAI_API_KEY=your_key_here`
+
+Notes:
+- The key is server-side only.
+- Do not commit real key values into GitHub.
+- For demo/jury access, use temporary key with spending limits.
+
+### Sentinel Hub (`VITE_SENTINEL_HUB_INSTANCE_ID`)
+1. Open Dashboard: `https://apps.sentinel-hub.com/dashboard/`
+2. Login and create/select configuration.
+3. Copy `Instance ID`.
+4. Put it into `.env`:
+   - `VITE_SENTINEL_HUB_INSTANCE_ID=your_instance_id_here`
+
+Notes:
+- This value is used by frontend map index requests.
+- Ensure your Sentinel Hub account/config has required data access.
+
 ## 5. Local Setup and Run
 Prerequisites:
 - Node.js 18+ (recommended 20+)
