@@ -12,10 +12,15 @@ BidAI is an MVP web application for field monitoring, satellite index visualizat
 
 1. Install dependencies:
    `npm install`
-2. Run frontend:
-   `npm run dev`
-3. Run backend:
+2. Create env file from template:
+   `cp .env.example .env`
+   On Windows PowerShell:
+   `Copy-Item .env.example .env`
+3. Fill values in `.env` (`OPENAI_API_KEY`, `VITE_SENTINEL_HUB_INSTANCE_ID`, etc.)
+4. Run backend:
    `npm run dev:server`
+5. Run frontend:
+   `npm run dev`
 
 ## Environment Variables
 
