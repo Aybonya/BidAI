@@ -50,25 +50,49 @@ Frontend/imagery:
 Security note:
 - Do not expose private keys with `VITE_` prefix in production.
 
-## 5. Key Features (MVP)
+## 5. Local Setup and Run
+Prerequisites:
+- Node.js 18+ (recommended 20+)
+- npm
+
+Steps:
+1. Install dependencies:
+`npm install`
+2. Create `.env` in project root:
+   - `OPENAI_API_KEY=...`
+   - `OPENAI_MODEL=gpt-4o-mini` (optional)
+   - `VITE_SENTINEL_HUB_INSTANCE_ID=...`
+3. Start backend API:
+`npm run dev:server`
+4. Start frontend (new terminal):
+`npm run dev`
+5. Open local URL shown by Vite (usually `http://localhost:5173`).
+
+Production build:
+1. Build frontend:
+`npm run build`
+2. Preview build:
+`npm run preview`
+
+## 6. Key Features (MVP)
 - Field polygon creation and management
 - Satellite imagery and index overlays
 - AI field report generation
 - AI season comparison
 - AI assistant widget
 
-## 6. Testing
+## 7. Testing
 Current repo includes backend tests for report services and schemas in `server/*.test.js`.
 
 Run:
 `npm test`
 
-## 7. Deployment Notes
+## 8. Deployment Notes
 - Frontend can be deployed on static hosting.
 - Backend should run as separate service/API.
 - Configure CORS/proxy and secure environment variables.
 
-## 8. Known Constraints
+## 9. Known Constraints
 - External API/network availability affects AI and imagery features.
 - Quality of reports depends on completeness of index/weather data.
 - Browser/proxy settings can impact map tile loading.
